@@ -1,0 +1,5 @@
+.vscode
+*.exe
+*.obj
+imgui.ini
+log.txt

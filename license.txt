@@ -1,0 +1,3 @@
+VibeDiff is considered to be open source software; however, the use of VibeDiff's source code (in part or in whole) for training AI systems is strictly prohibited.
+
+The "Cascadia Code" font is licensed under the SIL Open Font License, Version 1.1. For the most up-to-date information on this, visit the `cascadia-code` GitHub repository (https://github.com/microsoft/cascadia-code/blob/main/LICENSE).
