@@ -81,7 +81,8 @@ namespace AppState {
 		double minScore{ -std::numeric_limits<double>::infinity() };
 		std::function<double(double)> scoringFunction{ [](double x) { return x; } };
 	};
-
+	std::vector<Category> categories;
+	
 	struct ComparableItem {
 		inline void calcFinalScore() {
 			finalScore = 0.0;
@@ -89,22 +90,20 @@ namespace AppState {
 				finalScore += categories[i].calcFinalScore(categoryScores[i]);
 			}
 		}
-
+		
 		ComparableItem() : ComparableItem("Unnamed") {}
 		ComparableItem(std::string _name) : name(_name) { categoryScores.resize(categories.size()); }
-
+		
 		std::string name;
 		std::vector<double> categoryScores; // One score per Category
 		double finalScore{ 0.0 };
 	};
-
+	std::vector<ComparableItem> things;
+	
 	inline void pushCategory(const Category& category) {
 		categories.push_back(category);
 		for (ComparableItem& thing : things) { thing.categoryScores.push_back(0.0); }
 	}
-
-	std::vector<Category> categories;
-	std::vector<ComparableItem> things;
 }
 
 static std::ofstream logFile("log.txt");
